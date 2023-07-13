@@ -1,0 +1,21 @@
+[package]
+name = "sql2json"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "sql2json"
+path = "src/sql2json.rs"
+
+[[bin]]
+name = "json2sql"
+path = "src/json2sql.rs"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+clap = { version = "4.1.6", features = ["derive"] }
+eyre = "0.6.8"
+serde = { version = "1.0.152", features = ["derive"] }
+serde_json = { version = "1.0.93", features = ["preserve_order"] }
+sqlparser = { version = "0.30.0", features = ["serde_json", "sqlparser_derive", "serde", "visitor"] }
